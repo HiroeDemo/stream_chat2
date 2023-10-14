@@ -9,7 +9,7 @@ import tiktoken
 # api_key = config['OpenAI']['API_KEY']
 openai.api_key = st.secrets.OpenAI.API_KEY
 
-st.title("ChatGPT風 AIチャットアプリ top_p=0.1")
+st.title("ChatGPT風 AIチャットアプリ temperature=2.0")
 
 # openai.api_key = api_key ←ここを消せていなかった…
 
@@ -53,7 +53,7 @@ if prompt := st.chat_input("What is up?"):
             model=st.session_state["openai_model"],
             messages=st.session_state.inquiry_messages,
             stream=True,
-            top_p=0.1,
+            temperature=2.0,
         ):
             full_response += response.choices[0].delta.get("content", "")
             message_placeholder.markdown(full_response + "▌")
