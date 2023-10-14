@@ -9,7 +9,7 @@ import tiktoken
 # api_key = config['OpenAI']['API_KEY']
 openai.api_key = st.secrets.OpenAI.API_KEY
 
-st.title("ChatGPT風 AIチャットアプリ")
+st.title("ChatGPT風 AIチャットアプリ top_p=0.1")
 
 # openai.api_key = api_key ←ここを消せていなかった…
 
