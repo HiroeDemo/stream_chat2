@@ -53,6 +53,7 @@ if prompt := st.chat_input("What is up?"):
             model=st.session_state["openai_model"],
             messages=st.session_state.inquiry_messages,
             stream=True,
+            temperature=0.1,
         ):
             full_response += response.choices[0].delta.get("content", "")
             message_placeholder.markdown(full_response + "▌")
